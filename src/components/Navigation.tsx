@@ -24,16 +24,16 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
     <nav className={`relative ${
       transparent 
         ? 'bg-transparent !absolute left-0 top-0 w-full z-50' 
-        : 'bg-[#F5F5F0]'
+        : 'bg-[#F5F4F0]'
     }`}>
-      <div className="max-w-7xl mx-auto px-2 sm:px-4">
-        <div className="flex items-center justify-between h-20 sm:h-24 md:h-40">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center -ml-2 sm:ml-0">
-            <div className="relative w-36 sm:w-52 md:w-[30rem] h-14 sm:h-20 md:h-36">
+          <div className="flex items-center">
+            <div className="relative w-32 sm:w-40 h-10 sm:h-12">
               <Image 
                 src="/logo.webp"
-                alt='Roofs Vancouver logo'
+                alt='Brooklyn Flood Restoration'
                 fill
                 className="object-contain object-left"
                 priority
@@ -42,45 +42,36 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            {showActions ? (
-              <div className='flex flex-1 items-center justify-end gap-8 w-100'>
-                {navLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      push(link.url)
-                    }}
-                    className={`text-lg font-medium hover:text-[#E74C3C] transition-colors ${
-                      transparent ? 'text-white hover:text-[#E74C3C]' : 'text-[#2C3E50]'
-                    }`}
-                  >
-                    {link.text}
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <button
-                onClick={() => window.open('/contact', '_current')}
-                className="bg-[#E74C3C] text-white px-6 py-3 rounded-full hover:bg-[#D44332] transition-colors text-sm font-medium"
-              >
-                Get a Free Consultation
-              </button>
-            )}
+          <div className="hidden md:flex items-center">
+            <div className='flex items-center gap-8'>
+              {navLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    push(link.url)
+                  }}
+                  className={`text-base font-medium hover:text-[#8B2635] transition-colors ${
+                    transparent ? 'text-white hover:text-[#8B2635]' : 'text-stone-900'
+                  }`}
+                >
+                  {link.text}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-full hover:bg-[#2C3E50]/10 transition-colors"
+              className="p-2 rounded-xl hover:bg-black/5 transition-colors"
             >
               {isMenuOpen ? (
-                <X className={`h-6 w-6 ${transparent ? 'stroke-white' : 'stroke-[#2C3E50]'}`} />
+                <X className={`h-6 w-6 ${transparent ? 'stroke-white' : 'stroke-stone-900'}`} />
               ) : (
-                <Menu className={`h-6 w-6 ${transparent ? 'stroke-white' : 'stroke-[#2C3E50]'}`} />
+                <Menu className={`h-6 w-6 ${transparent ? 'stroke-white' : 'stroke-stone-900'}`} />
               )}
             </button>
           </div>
@@ -88,7 +79,7 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-[#E5E7E9] shadow-lg z-50">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
             <div className="px-4 py-2 space-y-1">
               {navLinks.map((link, index) => (
                 <a
@@ -99,26 +90,11 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
                     push(link.url);
                     setIsMenuOpen(false);
                   }}
-                  className="block py-3 px-4 text-[#2C3E50] hover:bg-[#F5F5F0] rounded-lg transition-colors"
+                  className="block py-3 px-4 text-stone-900 hover:bg-stone-100 rounded-xl transition-colors"
                 >
                   {link.text}
                 </a>
               ))}
-
-              {/* Mobile Actions */}
-              {!showActions && (
-                <div className="p-4">
-                  <button
-                    onClick={() => {
-                      window.open('/contact', '_current');
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full bg-[#E74C3C] text-white px-4 py-3 rounded-full hover:bg-[#D44332] transition-colors text-sm font-medium"
-                  >
-                    Get a Free Consultation
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         )}
