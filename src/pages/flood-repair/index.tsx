@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from "@/components/Navigation";
 import { Phone, Droplets, Clock, Shield, ArrowRight, AlertTriangle, CheckCircle2, BadgeCheck } from 'lucide-react';
+import Link from 'next/link';
 
 const FloodRepair = () => {
   const [formData, setFormData] = useState({
@@ -261,9 +262,12 @@ const FloodRepair = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Drywall Repair & Replacement</h3>
                 <p className="text-[#44403C] mb-4">Expert restoration of water-damaged walls and ceilings, including insulation replacement and structural repairs.</p>
-                <a href="/services/drywall" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                <Link 
+                  href="/services/drywall" 
+                  className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2"
+                >
                   Learn More <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -272,9 +276,12 @@ const FloodRepair = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Flooring Restoration</h3>
                 <p className="text-[#44403C] mb-4">Complete repair and replacement of water-damaged floors, including hardwood, carpet, tile, and subfloor restoration.</p>
-                <a href="/services/flooring" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                <Link 
+                  href="/services/flooring" 
+                  className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2"
+                >
                   Learn More <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -283,18 +290,24 @@ const FloodRepair = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Mold Prevention & Removal</h3>
                 <p className="text-[#44403C] mb-4">Professional remediation and preventive treatment to ensure your space stays mold-free after water damage repairs.</p>
-                <a href="/services/mold" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                <Link 
+                  href="/services/mold" 
+                  className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2"
+                >
                   Learn More <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           
           <div className="text-center mt-12">
-            <a href="/services" className="inline-flex items-center gap-2 text-[#8B2635] font-semibold hover:text-[#7A2230] transition-colors duration-300">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center gap-2 text-[#8B2635] font-semibold hover:text-[#7A2230] transition-colors duration-300"
+            >
               View All Services
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
