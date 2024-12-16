@@ -1,115 +1,305 @@
-import { useMemo } from 'react';
+import React, { useState } from 'react';
 import Navigation from "@/components/Navigation";
-import Contact from '@/components/Contact';
-import Steps from '@/components/Steps';
-import Hero from '@/components/Hero';
+import { Phone, Droplets, Clock, Shield, ArrowRight, AlertTriangle, CheckCircle2, BadgeCheck } from 'lucide-react';
 
 const FloodRepair = () => {
-  const examples = useMemo(() => {
-    return [
-        "I was Vancouver's trusted flood damage estimation tool for 5 years...",
-        "Now I'm helping customers get instant quotes for water damage restoration...",
-        "Try me! Like: Basement flooded from burst pipe, 800 sq ft affected...",
-        "Or: Water damage from overflow in upstairs bathroom affecting ceiling below...",
-    ];
-  }, [])
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    address: '',
+    emergency: '',
+  });
 
-  const context = `
-    System Role:
-You are a flood damage restoration quoting assistant for a company providing emergency water damage services at $200/hour. Your role is to generate comprehensive estimates based on water damage extent, affected materials, and restoration requirements.
-Key Considerations:
+  const handleEmergencyCall = () => {
+    window.location.href = 'tel:+17182345678';
+  };
 
-Emergency Call Out Fee: $500 flat rate
-Dehumidifier Rental: $180/day per unit
-Water Extraction Methods
-Structural Drying Requirements
-Moisture Detection/Mapping
-Mold Prevention
-Material Removal/Replacement
-Sanitization Protocols
-Equipment Placement Strategy
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
 
-Input Example:
-Job Details: Basement flooding, 800 sq ft affected
-Water Type: Clean water from burst pipe
-Time Standing: 12 hours
-Materials Affected: Carpet, drywall, baseboards
-Photo: [Uploaded image]
-Output Example:
-Scope of Work
-Emergency water damage restoration for 800 sq ft basement flooding, including extraction, drying, and material restoration.
-Project Breakdown
-Emergency Response ($500)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-Emergency call-out fee
-Initial assessment
-Moisture mapping
+  const features = [
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "60-Minute Response",
+      description: "Fast emergency response across Brooklyn"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "20+ Years Experience",
+      description: "Trusted flood restoration experts"
+    },
+    {
+      icon: <Droplets className="w-6 h-6" />,
+      title: "Advanced Equipment",
+      description: "Professional-grade water extraction"
+    }
+  ];
 
-Day 1: Water Extraction/Equipment Setup ($2,360)
-
-Extraction services (4 hours at $200/hour): $800
-4 Dehumidifiers placement: $720/day
-Air movers setup
-Initial sanitization
-
-Days 2-3: Drying Process ($3,440)
-
-Daily moisture readings (2 hours/day at $200/hour): $800
-Dehumidifier rental (4 units x 2 days): $1,440
-Equipment monitoring and adjustment
-Progressive drying assessment
-
-Day 4: Demolition/Preparation ($1,600)
-
-Remove damaged materials (8 hours at $200/hour)
-Structural cleaning
-Anti-microbial application
-
-Equipment/Materials
-
-Dehumidifiers (4 units x 3 days): $2,160
-Air Movers: $600
-Sanitization Chemicals: $300
-Moisture Meters: $200
-PPE/Containment: $250
-
-Summary
-Labor: $3,700
-Emergency Fee: $500
-Equipment Rental: $2,160
-Materials: $1,350
-Total Estimate: $7,710
-Instructions:
-
-Calculate equipment needs based on affected area
-Factor drying time based on materials/saturation
-Include emergency response fees
-Account for equipment rental duration
-Consider material replacement needs
-Document moisture levels/drying progress
-Include sanitization requirements
-Factor in humidity/temperature conditions
-Calculate proper equipment placement
-Consider contamination category impacts
-  `
+  const benefits = [
+    {
+      title: "Respect & Customer Satisfaction",
+      description: "Your satisfaction is our top priority. We focus on meeting your needs with exceptional service."
+    },
+    {
+      title: "Transparent Pricing",
+      description: "High-quality services at competitive rates with no hidden costs."
+    },
+    {
+      title: "Professional Expertise",
+      description: "Our skilled team delivers reliable repairs with a commitment to excellence."
+    },
+    {
+      title: "Client-First Approach",
+      description: "We enhance your property's value through meticulous repair and restoration."
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-white selection:bg-gray-900 selection:text-white">
+    <div className="min-h-screen bg-[#F5F4F0]">
       <Navigation transparent />
-      <Hero 
-        context={context} 
-        examples={examples}  
-        title='24/7 Emergency Flood Restoration & Water Damage Services'
-        subtitle=''
-        description='Expert water damage restoration available around the clock. Our certified technicians use advanced equipment and proven methods to quickly extract water, dry your property, prevent mold growth, and restore your space to its pre-damage condition.'
-        quoteTitle="Emergency Flood Restoration Services. Quoted Instantly"
-        quoteSubtitle="From burst pipes to major floods. Your emergency estimate is seconds away."
-        quoteDescription="Whether it's basement flooding, storm damage, or plumbing disasters, get an instant quote powered by Vancouver's most trusted water damage experts. Our new AI system combines 25+ years of emergency restoration experience with cutting-edge technology to deliver accurate estimates in seconds."
-      />
-      <Steps />
-      <Contact />
+      
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-32 bg-gradient-to-b from-stone-100 to-[#F5F4F0]">
+        <div className="absolute inset-0 bg-grid-stone-200 bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,white,transparent)]" />
+        
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-[#8B2635] text-white px-4 py-1 rounded-full text-sm font-medium mb-6">
+              <AlertTriangle className="w-4 h-4" />
+              24/7 Emergency Flood Response
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#1C1917]">
+              Emergency
+              <span className="block text-[#8B2635]">Water Removal</span>
+            </h1>
+            <p className="text-xl text-[#44403C] max-w-2xl mx-auto">
+              When disaster strikes, every minute counts. Our expert team arrives within 60 minutes to prevent further damage.
+            </p>
+          </div>
+
+          {/* Emergency Call Button */}
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <button
+              onClick={handleEmergencyCall}
+              className="group inline-flex items-center justify-center gap-3 bg-[#8B2635] text-white px-8 py-6 rounded-full text-2xl font-bold hover:bg-[#7A2230] transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <Phone className="w-8 h-8" />
+              <span>(718) 234-5678</span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <p className="mt-4 text-[#44403C] text-lg">
+              Immediate Response • Free Estimates • Licensed & Insured
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="text-[#8B2635] mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-[#44403C]">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Brooklyn&apos;s Most Trusted Flood Repair Experts</h2>
+            <p className="text-lg text-[#44403C] leading-relaxed">
+              When your property faces flood damage, you need a reliable partner for quick and effective repairs. Our team is dedicated to minimizing further damage and promptly starting the repair and reconstruction process. With over 20 years of experience in flood damage repair and property restoration, you can trust us to bring your home back to its original condition.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex gap-4 p-6 bg-stone-50 rounded-xl">
+                <div className="flex-shrink-0">
+                  <BadgeCheck className="w-6 h-6 text-[#8B2635]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-[#44403C]">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Form Section */}
+      <section className="py-16 bg-stone-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center gap-2 bg-[#8B2635] text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
+              <AlertTriangle className="w-4 h-4" />
+              Emergency Service Request
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Get Immediate Assistance</h2>
+            <p className="text-lg text-[#44403C]">
+              For fastest service call: <span className="font-semibold">(718) 234-5678</span>
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-[#1C1917] mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-[#8B2635] focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-[#1C1917] mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-[#8B2635] focus:border-transparent"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="address" className="block text-sm font-medium text-[#1C1917] mb-2">
+                Property Address
+              </label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-[#8B2635] focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="emergency" className="block text-sm font-medium text-[#1C1917] mb-2">
+                Describe Your Emergency
+              </label>
+              <textarea
+                id="emergency"
+                name="emergency"
+                value={formData.emergency}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-[#8B2635] focus:border-transparent"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#8B2635] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#7A2230] transition-colors duration-300"
+            >
+              Submit Emergency Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 bg-[#8B2635] text-white">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Don&apos;t Let Water Damage Spread
+          </h2>
+          <p className="text-xl mb-8 text-stone-200">
+            Get a detailed flood damage restoration plan that ensures your property is clean, dry, and restored to its best condition.
+          </p>
+          <button
+            onClick={handleEmergencyCall}
+            className="group inline-flex items-center justify-center gap-3 bg-white text-[#8B2635] px-8 py-4 rounded-full text-xl font-bold hover:bg-stone-100 transition-all duration-300"
+          >
+            <Phone className="w-6 h-6" />
+            <span>Call For Immediate Help</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </section>
+
+      {/* Other Services Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Post-Water Damage Repair Services</h2>
+            <p className="text-lg text-[#44403C]">Expert restoration services to rebuild and protect your property</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 bg-[url('/photos/drywall.jpg')] bg-cover bg-center"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Drywall Repair & Replacement</h3>
+                <p className="text-[#44403C] mb-4">Expert restoration of water-damaged walls and ceilings, including insulation replacement and structural repairs.</p>
+                <a href="/services/drywall" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 bg-[url('/photos/flooring.jpg')] bg-cover bg-center"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Flooring Restoration</h3>
+                <p className="text-[#44403C] mb-4">Complete repair and replacement of water-damaged floors, including hardwood, carpet, tile, and subfloor restoration.</p>
+                <a href="/services/flooring" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 bg-[url('/photos/mold.jpg')] bg-cover bg-center"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Mold Prevention & Removal</h3>
+                <p className="text-[#44403C] mb-4">Professional remediation and preventive treatment to ensure your space stays mold-free after water damage repairs.</p>
+                <a href="/services/mold" className="text-[#8B2635] font-medium hover:text-[#7A2230] transition-colors duration-300 flex items-center gap-2">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <a href="/services" className="inline-flex items-center gap-2 text-[#8B2635] font-semibold hover:text-[#7A2230] transition-colors duration-300">
+              View All Services
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 };
 
 export default FloodRepair;
