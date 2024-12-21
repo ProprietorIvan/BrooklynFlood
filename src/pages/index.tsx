@@ -9,12 +9,8 @@ import Image from 'next/image';
 const Home = () => {
   const router = useRouter();
 
-  const handleContact = (method: 'phone' | 'email') => {
-    if (method === 'phone') {
-      window.location.href = 'tel:+17182345678';
-    } else if (method === 'email') {
-      window.location.href = 'mailto:office@floodbrooklyn.com';
-    }
+  const handleNavigation = (path: string) => {
+    router.push(path);
   };
 
   return (
@@ -41,7 +37,7 @@ const Home = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => handleContact('phone')}
+                  onClick={() => handleNavigation('/flood-repair')}
                   className="group flex items-center justify-center gap-2 bg-[#8B2635] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#7A2230] transition-colors"
                 >
                   <Phone className="w-5 h-5" />
@@ -49,7 +45,7 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
-                  onClick={() => handleContact('email')}
+                  onClick={() => handleNavigation('/contact')}
                   className="group flex items-center justify-center gap-2 bg-white border-2 border-[#1C1917] text-[#1C1917] px-8 py-4 rounded-full text-lg font-medium hover:bg-stone-50 transition-colors"
                 >
                   <Mail className="w-5 h-5" />
@@ -119,7 +115,7 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => handleContact('phone')}
+              onClick={() => handleNavigation('/flood-repair')}
               className="group flex items-center justify-center gap-2 bg-white text-[#8B2635] px-8 py-4 rounded-full text-lg font-medium hover:bg-stone-100 transition-colors"
             >
               <Phone className="w-5 h-5" />
@@ -127,7 +123,7 @@ const Home = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
-              onClick={() => handleContact('email')}
+              onClick={() => handleNavigation('/contact')}
               className="group flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white/10 transition-colors"
             >
               <Mail className="w-5 h-5" />
