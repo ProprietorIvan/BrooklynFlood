@@ -107,7 +107,7 @@ const MoldRemediation = () => {
             <div className="w-full md:w-1/2">
               <div className="relative h-[600px] w-full">
                 <Image
-                  src="/api/placeholder/800/600"
+                  src="/photos/homepage/5.jpg"
                   alt="Professional Mold Remediation"
                   fill
                   className="object-cover rounded-xl"
@@ -191,7 +191,7 @@ const MoldRemediation = () => {
             </div>
             <div className="relative h-[500px]">
               <Image
-                src="/api/placeholder/800/600"
+                src="/photos/homepage/1.jpg"
                 alt="Mold Remediation Results"
                 fill
                 className="object-cover rounded-xl"

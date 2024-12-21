@@ -32,7 +32,7 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
           <div className="flex items-center">
             <div className="relative w-32 sm:w-40 h-10 sm:h-12">
               <Image 
-                src="/logo.webp"
+                src="/logo1.png"
                 alt='Brooklyn Flood Restoration'
                 fill
                 className="object-contain object-left"

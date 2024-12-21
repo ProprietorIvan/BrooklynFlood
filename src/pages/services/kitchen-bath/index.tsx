@@ -107,7 +107,7 @@ const KitchenBathRestoration = () => {
             <div className="w-full md:w-1/2">
               <div className="relative h-[600px] w-full">
                 <Image
-                  src="/api/placeholder/800/600"
+                  src="/photos/homepage/7.jpg"
                   alt="Professional Kitchen and Bath Restoration"
                   fill
                   className="object-cover rounded-xl"
@@ -191,7 +191,7 @@ const KitchenBathRestoration = () => {
             </div>
             <div className="relative h-[500px]">
               <Image
-                src="/api/placeholder/800/600"
+                src="/photos/homepage/2.jpg"
                 alt="Kitchen and Bath Restoration Results"
                 fill
                 className="object-cover rounded-xl"

@@ -41,9 +41,9 @@ const ComparisonSection: React.FC = () => {
           ]
         }
       ],
-      image: "/photos/homepage/1.jpg",
+      image: "/photos/homepage/2.jpg",
       orientation: "right",
-      url: "/services/water-extraction"
+      url: "flood-repair"
     },
     {
       title: "Structural Drying & Dehumidification",
@@ -59,7 +59,7 @@ const ComparisonSection: React.FC = () => {
           ]
         }
       ],
-      image: "/photos/homepage/2.jpg",
+      image: "/photos/homepage/3.jpg",
       orientation: "left",
       url: "/services/structural-drying"
     },
@@ -77,7 +77,7 @@ const ComparisonSection: React.FC = () => {
           ]
         }
       ],
-      image: "/photos/homepage/3.jpg",
+      image: "/photos/homepage/4.jpg",
       orientation: "right",
       url: "/services/flooring"
     },
@@ -95,7 +95,7 @@ const ComparisonSection: React.FC = () => {
           ]
         }
       ],
-      image: "/photos/homepage/4.jpg",
+      image: "/photos/homepage/7.jpg",
       orientation: "left",
       url: "/services/drywall"
     },
@@ -131,7 +131,7 @@ const ComparisonSection: React.FC = () => {
           ]
         }
       ],
-      image: "/photos/homepage/1.jpg",
+      image: "/photos/homepage/6.jpg",
       orientation: "left",
       url: "/services/kitchen-bath"
     }
@@ -242,11 +242,11 @@ const ComparisonSection: React.FC = () => {
                         src={service.image}
                         alt={service.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105 brightness-110"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:bg-black/40 transition-all duration-300" />
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-300" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-white text-xl font-semibold bg-[#8B2635]/90 px-6 py-3 rounded-full">
                           View Service Details
@@ -278,7 +278,7 @@ const ComparisonSection: React.FC = () => {
 
                   <a 
                     href={service.url}
-                    className="inline-flex items-center gap-2 bg-[#8B2635] text-white px-8 py-3 rounded-full font-medium hover:bg-[#7A2230] transition-all duration-300 group"
+                    className="inline-flex items-center gap-2 bg-[#8B2635] text-white px-8 py-3 rounded-full font-medium hover:bg-[#7A2230] transition-all duration-300 group mt-6"
                   >
                     Book Now
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

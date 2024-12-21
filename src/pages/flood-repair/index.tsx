@@ -258,7 +258,7 @@ const FloodRepair = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="h-48 bg-[url('/photos/drywall.jpg')] bg-cover bg-center"></div>
+              <div className="h-48 bg-[url('/photos/homepage/7.jpg')] bg-cover bg-center"></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Drywall Repair & Replacement</h3>
                 <p className="text-[#44403C] mb-4">Expert restoration of water-damaged walls and ceilings, including insulation replacement and structural repairs.</p>
@@ -272,7 +272,7 @@ const FloodRepair = () => {
             </div>
 
             <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="h-48 bg-[url('/photos/flooring.jpg')] bg-cover bg-center"></div>
+              <div className="h-48 bg-[url('/photos/homepage/4.jpg')] bg-cover bg-center"></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Flooring Restoration</h3>
                 <p className="text-[#44403C] mb-4">Complete repair and replacement of water-damaged floors, including hardwood, carpet, tile, and subfloor restoration.</p>
@@ -286,7 +286,7 @@ const FloodRepair = () => {
             </div>
 
             <div className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="h-48 bg-[url('/photos/mold.jpg')] bg-cover bg-center"></div>
+              <div className="h-48 bg-[url('/photos/homepage/5.jpg')] bg-cover bg-center"></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Mold Prevention & Removal</h3>
                 <p className="text-[#44403C] mb-4">Professional remediation and preventive treatment to ensure your space stays mold-free after water damage repairs.</p>

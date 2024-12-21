@@ -73,7 +73,7 @@ const Home = () => {
               <div className="relative h-[400px] lg:h-[500px] w-full">
                 {/* Main image */}
                 <Image
-                  src="/photos/homepage/restoration.jpg"
+                  src="/photos/homepage/1.jpg"
                   alt="Professional Flood Restoration in Brooklyn"
                   fill
                   priority
