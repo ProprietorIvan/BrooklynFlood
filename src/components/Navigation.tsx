@@ -27,10 +27,10 @@ const Navigation = ({ currentPage, showActions = true, transparent }: Navigation
         : 'bg-[#F5F4F0]'
     }`}>
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-40 md:h-32">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="relative w-32 sm:w-40 h-10 sm:h-12">
+            <div className="relative w-64 sm:w-80 md:w-48 h-20 sm:h-24 md:h-16">
               <Image 
                 src="/logo1.png"
                 alt='Brooklyn Flood Restoration'
